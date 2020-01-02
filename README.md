@@ -19,7 +19,7 @@ python execute command for reference
                                             stderr=subprocess.PIPE,
                                             executable = "/bin/bash")
             output, error = check_state.communicate()
-            return check_state.returncode, output, error
+            return check_state.returncode, output.decode("utf-8"), error.decode("utf-8")
         except Exception as e:
             self.DoError(str(e))
 ```
