@@ -5,3 +5,21 @@ Python virtual env
 ```
 virtualenv -p python3 envname
 ```
+
+python execute command for reference
+
+```
+    def executeCommand(self,cmd_to_execute):
+        '''
+        Execute the bash command
+        '''
+        try:
+            check_state = subprocess.Popen(cmd_to_execute, shell=True,
+                                            stdout=subprocess.PIPE,
+                                            stderr=subprocess.PIPE,
+                                            executable = "/bin/bash")
+            output, error = check_state.communicate()
+            return check_state.returncode, output, error
+        except Exception as e:
+            self.DoError(str(e))
+```
