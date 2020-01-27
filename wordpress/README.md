@@ -65,6 +65,11 @@ sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
 ## add the content in 
 vi /var/www/wordpress/wp-config.php
+
+define( 'WP_DEBUG', false );
+ini_set('upload_max_size' , '256M' );
+
 service apache2 restart
 
 ```
+
