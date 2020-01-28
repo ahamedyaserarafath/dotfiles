@@ -72,4 +72,15 @@ ini_set('upload_max_size' , '256M' );
 service apache2 restart
 
 ```
+if you want to install
+```
+apt-get install php7.2-fpm
+/etc/init.d/php7.2-fpm restart
+apache2ctl restart
+
+```
+change the max upload size in the below url
+```
+/etc/php/7.2/apache2/php.ini
+```
 
