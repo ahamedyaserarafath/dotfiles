@@ -9,3 +9,10 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo systemctl status docker
 ```
+
+docker push to hub.docker.com
+```
+sudo docker images
+sudo docker tag 29aed937c265 ahamedyaserarafath/mongodb:<tag_name>
+sudo docker push ahamedyaserarafath/mongodb:<tag_name>
+```
