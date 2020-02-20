@@ -68,7 +68,11 @@ EOF
 11. Initialize the cluster using the IP range for Flannel.
 ```
     kubeadm init --pod-network-cidr=10.244.0.0/16
-```    
+```
+Ignore the cpu check
+```
+    kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU
+```  
 12. Copy the kubeadmin join command.
 
 13. Exit sudo and run the following:
