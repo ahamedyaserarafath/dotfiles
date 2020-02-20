@@ -91,3 +91,34 @@ EOF
 ```
 kubectl get nodes
 ```
+
+
+Sample Yaml File
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: examplepod
+  namespace: podexample
+spec:
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - name: webcontainer
+    image: nginx
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
+  - name: filecontainer
+    image: debian
+    volumeMounts:
+    - name: html
+      mountPath: /html
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do
+         date >> /html/index.html;
+         sleep 1;
+        done
+```
