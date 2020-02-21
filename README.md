@@ -1,6 +1,6 @@
 # dotfiles
 
-Python [readme](python/README.md)
+Python [readme](python/)
 
 Python [readme](https://github.com/ahamedyaserarafath/dotfiles/tree/master/python)
 
