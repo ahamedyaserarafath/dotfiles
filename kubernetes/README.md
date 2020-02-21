@@ -127,7 +127,7 @@ spec:
         done
 ```
 
-Sample replica yml file
+Sample replica yaml file
 ```
 apiVersion: apps/v1
 kind: ReplicaSet
@@ -155,7 +155,7 @@ spec:
         ports:
         - containerPort: 80
 ```
-Sample service yml file
+Sample service yaml file
 
 ```
 kind: Service
@@ -169,4 +169,29 @@ spec:
   - protocol: TCP
     port: 32768
     targetPort: 80
+```
+Sample deployment yaml file
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment 
+  labels: 
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx 
+    spec: 
+      containers:
+      - name: nginx
+        image: darealmc/nginx-k8s:v1
+        ports:
+        - containerPort: 80
 ```
