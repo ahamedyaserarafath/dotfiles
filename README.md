@@ -2,11 +2,9 @@
 
 Python [readme](python/)
 
-Python [readme](https://github.com/ahamedyaserarafath/dotfiles/tree/master/python)
+Docker [readme](docker/)
 
-Docker [readme](https://github.com/ahamedyaserarafath/dotfiles/tree/master/docker)
+Kubernetes [readme](kubernetes/)
 
-Kubernetes [readme](https://github.com/ahamedyaserarafath/dotfiles/tree/master/kubernetes)
-
-Wordpress [readme](https://github.com/ahamedyaserarafath/dotfiles/tree/master/wordpress)
+Wordpress [readme](wordpress/)
 
