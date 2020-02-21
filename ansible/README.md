@@ -1,4 +1,9 @@
-TO check the localhost setup
+To check the localhost setup
 ```
 ansible localhost -m setup
+```
+
+Install ansible
+```
+sudo yum install ansible
 ```
