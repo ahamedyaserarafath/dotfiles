@@ -155,3 +155,18 @@ spec:
         ports:
         - containerPort: 80
 ```
+Sample service yml file
+
+```
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-awesome-service
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 32768
+    targetPort: 80
+```
