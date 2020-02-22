@@ -199,3 +199,7 @@ change the image in deployment
 ```
 kubectl set image deployment.v1.apps/example-deployment nginx=darealmc/nginx-k8s:v2
 ```
+Kubernets dashboard
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+```
