@@ -210,3 +210,10 @@ To access dashboard
 ```
 http://<ip>:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 ```
+or follow the below steps
+```
+kubectl proxy
+```
+```
+ssh -i <pem_file> -L 9999:127.0.0.1:8001   <username>@<ip>
+```
