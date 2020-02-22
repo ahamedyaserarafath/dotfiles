@@ -195,3 +195,7 @@ spec:
         ports:
         - containerPort: 80
 ```
+change the image in deployment
+```
+kubectl set image deployment.v1.apps/example-deployment nginx=darealmc/nginx-k8s:v2
+```
