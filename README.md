@@ -1,15 +1,16 @@
 # dotfiles
 
-Python [readme](python/)
+Python:
+Some basic function which is uselful - [readme](python/)
 
-Docker [readme](docker/)
+Docker - [readme](docker/)
 
-Kubernetes [readme](kubernetes/)
+Kubernetes -  [readme](kubernetes/)
 
-Wordpress [readme](wordpress/)
+Wordpress - [readme](wordpress/)
 
-Ansible [readme](ansible/)
+Ansible - [readme](ansible/)
 
 Linux commands and setups:
-Install Windows 10 on existing ubuntu [readme](linux/) 
+Install Windows 10 on existing ubuntu - [readme](linux/) 
 
