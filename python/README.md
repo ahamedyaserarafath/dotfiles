@@ -44,3 +44,13 @@ def add_delete_text_file(self,filename,delete_text,add_text):
     except Exception as e:
         self.DoError(str(e))
 ```
+
+Python VS settings remotely
+```
+{
+    "python.pythonPath": "/home/user/venv/bin/python",
+    "python.linting.enabled": true,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black"
+}
+```
