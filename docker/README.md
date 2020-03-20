@@ -23,3 +23,11 @@ Some useful commands
 ```
 docker system prune
 ```
+2. To use docker with proxy
+```
+#cat /etc/sysconfig/docker
+HTTP_PROXY="http://user01:password@10.10.10.10:8080"
+HTTPS_PROXY="https://user01:password@10.10.10.10:8080"
+# service docker restart
+
+```
