@@ -31,3 +31,11 @@ HTTPS_PROXY="https://user01:password@10.10.10.10:8080"
 # service docker restart
 
 ```
+3. to start container
+```
+docker container run -it -d 8b0ff41a2f76
+```
+4. to enter into container
+```
+docker container exec -it 51fef2530dd3 '/bin/bash'
+```
