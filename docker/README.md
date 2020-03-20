@@ -17,3 +17,9 @@ sudo docker images
 sudo docker tag 29aed937c265 ahamedyaserarafath/mongodb:<tag_name>
 sudo docker push ahamedyaserarafath/mongodb:<tag_name>
 ```
+
+Some useful commands
+1. to clean system images which occupied the disk
+```
+docker system prune
+```
