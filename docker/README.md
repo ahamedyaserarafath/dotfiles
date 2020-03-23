@@ -43,4 +43,13 @@ docker container exec -it 51fef2530dd3 '/bin/bash'
 ```
 docker save -o <dir>/<filename>.tar <image_name>
 ```
-6.
+6.Load image from file
+```
+```
+7. Problem and solution for overlay error
+```
+error creating overlay mount to /var/lib/docker/overlay2/f79e6f666560777a04dbbabcd919b3cdac79cd12cb6e124d30fc44ad063a36a1/merged: invalid argument
+```
+```
+echo '{ "storage-driver": "devicemapper" }' | sudo tee /etc/docker/daemon.json
+```
