@@ -53,3 +53,21 @@ error creating overlay mount to /var/lib/docker/overlay2/f79e6f666560777a04dbbab
 ```
 echo '{ "storage-driver": "devicemapper" }' | sudo tee /etc/docker/daemon.json
 ```
+8. To start the docker with uri
+/usr/lib/systemd/system/docker.service -> in centos 7
+```
+...
+ExecStart=/usr/bin/dockerd-current \
+...
+```
+to
+```
+...
+ExecStart=/usr/bin/dockerd-current  -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock \
+...
+```
+```
+systemctl daemon-reload
+systemctl restart docker
+```
+```
