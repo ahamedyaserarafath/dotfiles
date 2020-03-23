@@ -39,3 +39,8 @@ docker container run -it -d 8b0ff41a2f76
 ```
 docker container exec -it 51fef2530dd3 '/bin/bash'
 ```
+5. Save image locally
+```
+docker save -o <dir>/<filename>.tar <image_name>
+```
+6.
