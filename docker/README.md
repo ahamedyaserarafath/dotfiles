@@ -45,6 +45,7 @@ docker save -o <dir>/<filename>.tar <image_name>
 ```
 6.Load image from file
 ```
+docker load -i <filename>.tar
 ```
 7. Problem and solution for overlay error
 ```
