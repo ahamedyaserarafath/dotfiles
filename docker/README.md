@@ -55,6 +55,7 @@ error creating overlay mount to /var/lib/docker/overlay2/f79e6f666560777a04dbbab
 echo '{ "storage-driver": "devicemapper" }' | sudo tee /etc/docker/daemon.json
 ```
 8. To start the docker with uri
+
 /usr/lib/systemd/system/docker.service -> in centos 7
 ```
 ...
@@ -71,4 +72,44 @@ ExecStart=/usr/bin/dockerd-current  -H tcp://0.0.0.0:4243 -H unix:///var/run/doc
 systemctl daemon-reload
 systemctl restart docker
 ```
+
+9. Install docker-ce with upgrade in centos 7
+```
+yum remove docker docker-common docker-selinux docker-engine
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce
+docker --version
+```
+10. Install docker-ce with proxy
+
+/usr/lib/systemd/system/docker.service
+```
+...
+[Service]
+Type=notify
+# the default is not to use systemd for cgroups because the delegate issues still
+# exists and systemd currently does not support the cgroup feature set required
+# for containers run by docker
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+TimeoutSec=0
+...
+```
+to
+```
+...
+[Service]
+Type=notify
+# the default is not to use systemd for cgroups because the delegate issues still
+# exists and systemd currently does not support the cgroup feature set required
+# for containers run by docker
+Environment="HTTPS_PROXY=http://10.10.100.103:3128"
+Environment="HTTP_PROXY=http://10.10.100.103:3128"
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+TimeoutSec=0
+...
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
 ```
