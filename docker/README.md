@@ -81,7 +81,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 yum install docker-ce
 docker --version
 ```
-10. Install docker-ce with proxy
+10. Install docker-ce with proxy and To start the docker with uri
 
 /usr/lib/systemd/system/docker.service
 ```
@@ -106,7 +106,7 @@ Type=notify
 # for containers run by docker
 Environment="HTTPS_PROXY=http://10.10.100.103:3128"
 Environment="HTTP_PROXY=http://10.10.100.103:3128"
-ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock  -H fd:// --containerd=/run/containerd/containerd.sock
 ExecReload=/bin/kill -s HUP $MAINPID
 TimeoutSec=0
 ...
@@ -119,4 +119,20 @@ COMPOSEVERSION=$(curl -s https://github.com/docker/compose/releases/latest/downl
 curl -L "https://github.com/docker/compose/releases/download/$COMPOSEVERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+12. Reinstall docker by removing every container
+```
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi -f $(docker images -q)
+docker system prune
+sudo yum remove docker* docker-common docker-selinux docker-engine
+rm -rf /var/lib/docker*
+rm -rf /etc/docker/
+yum install docker-ce
+```
+13. Portainer tool is better one for managing the docker without kube.
+```
+docker images
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
