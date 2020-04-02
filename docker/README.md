@@ -130,6 +130,7 @@ yes y | docker system prune --volumes
 sudo yum remove docker* docker-common docker-selinux docker-engine
 rm -rf /var/lib/docker*
 rm -rf /etc/docker/
+ip link del docker0
 yum install docker-ce
 ```
 13. Portainer tool is better one for managing the docker without kube.
