@@ -125,7 +125,8 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker rmi -f $(docker images -q)
-docker system prune
+yes y | docker system prune
+yes y | docker system prune --volumes
 sudo yum remove docker* docker-common docker-selinux docker-engine
 rm -rf /var/lib/docker*
 rm -rf /etc/docker/
