@@ -133,7 +133,12 @@ rm -rf /etc/docker/
 ip link del docker0
 yum install docker-ce
 ```
-13. Portainer tool is better one for managing the docker without kube.
+13. To get a container ip
+```
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+```
+
+14. Portainer tool is better one for managing the docker without kube.
 ```
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
