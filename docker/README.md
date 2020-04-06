@@ -130,6 +130,7 @@ yes y | docker system prune --volumes
 sudo yum remove docker* docker-common docker-selinux docker-engine
 rm -rf /var/lib/docker*
 rm -rf /etc/docker/
+rm -rf /var/run/docker/
 ip link del docker0
 yum install docker-ce
 ```
