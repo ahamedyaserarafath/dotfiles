@@ -128,6 +128,8 @@ docker rmi -f $(docker images -q)
 yes y | docker system prune
 yes y | docker system prune --volumes
 sudo yum remove docker* docker-common docker-selinux docker-engine
+# In case if the above command doesnt remove every docker
+sudo yum remove -y docker-ce docker-ce-cli docker-common docker-selinux docker-engine
 rm -rf /var/lib/docker*
 rm -rf /etc/docker/
 rm -rf /var/run/docker/
