@@ -6,6 +6,11 @@ Python virtual env
 virtualenv -p python3 envname
 ```
 
+For Mac OS
+```
+python3 -m venv env
+```
+
 python execute command for reference
 
 ```
