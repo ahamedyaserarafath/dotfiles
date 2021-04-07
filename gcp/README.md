@@ -1,4 +1,4 @@
-Sample Bigquery
+1. Sample Bigquery
 ```
 SELECT *  
 FROM `cloud-training-prod-bucket.arch_infra.billing_data`
@@ -37,4 +37,41 @@ FROM `cloud-training-prod-bucket.arch_infra.billing_data`
 WHERE (cost > 1)
 GROUP BY cost, product
 LIMIT 200
+```
+
+2. Sample commands for gcloud
+
+```
+gcloud config list
+
+gsutil ls
+
+gsutil ls gs://storagename
+
+gsutil ls gs://storagename/**
+
+gsutil mb --help
+
+gsutil mb-l northamerica-northeast1 gs://storagename
+
+gsutil lable get gs://storagename/
+
+gsutil label set <jsonvalue> gs://storagenamenew
+
+gsutil label ch -l "extralabel:extravalue" gs://storagename
+
+gsutil versioning get gs://storagenamenew
+
+gsutil versioning set on gs://storagenamenew
+
+gsutil cp <filename> gs://storagenamenew/
+
+gsutil ls -a gs://storagenamenew/
+
+gsutil rm gs://storagenamenew/<filename>
+
+gsutil cp gs://storagename/** gs://storagenamenew/
+
+gsutil acl ch -u AllUsers:R  gs://storagenamenew/<filename>
+
 ```
