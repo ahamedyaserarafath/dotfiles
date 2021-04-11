@@ -75,3 +75,27 @@ gsutil cp gs://storagename/** gs://storagenamenew/
 gsutil acl ch -u AllUsers:R  gs://storagenamenew/<filename>
 
 ```
+
+3. Google Compute Engine
+
+```
+gcloud config get-value project
+
+gcloud compute instances list
+
+gcloud services list
+
+gcloud services list -h
+
+gcloud services list --enabled
+
+gcloud services list --available | grep compute
+
+gcloud services -h 
+
+gcloud compute instances create myvm
+
+gcloud compute instances delete myvm
+
+
+```
