@@ -99,3 +99,42 @@ gcloud compute instances delete myvm
 
 
 ```
+
+4. GCE in and out 
+
+```
+gcloud config list
+
+curl -kv api.ipify.org
+
+gcloud compute instances create newvm -h 
+
+gcloud compute instances create newvm -help
+
+gcloud compute machine-types list
+
+gcloud topic filters
+
+gcloud compute machine-types list --filter="NAME:f1-micro"
+
+gcloud compute machine-types list --filter="NAME:f1-micro AND ZONE~us-west"
+
+gcloud config set compute/zone us-west2-b
+
+gcloud config set compute/region us-west2
+
+gcloud compute instances create --machine-types=f1-micro newvm 
+
+ping -c 2 externalip
+
+gcloud compute ssh newvm
+
+curl -H "Metadata-Flavor:Google" metadata.google.internal/computeMetadata/v1
+
+curl -H "Metadata-Flavor:Google" metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
+
+Run inside vm `gcloud config list and gcloud compute instances delete newvm`
+
+
+
+```
