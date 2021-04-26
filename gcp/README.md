@@ -149,3 +149,16 @@ edit base.html
 gcloud app deploy --no-promote --version 2
 
 ```
+
+6. Bigquery 
+
+```
+ bq mk metobjects
+ bq ls
+ bq load --source_format=CSV --skip_leading_rows=1 metobjects.linkedObjects metaobjectbqlab.csv title:STRING,artist:STRING,year:INTEGER,link:STRING 
+ bq ls metobjects
+ bq show metobjects.linkedObjects
+ bq query "SELECT year,title,artist FROM metobjects.linkedObjects WHERE year > 2000 ORDER BY year DESC LIMIT 15"
+ bq query "SELECT title,link FROM metobjects.linkedObjects WHERE year > 2000 ORDER BY year DESC LIMIT 15"
+
+```
