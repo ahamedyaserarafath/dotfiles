@@ -138,3 +138,14 @@ Run inside vm `gcloud config list and gcloud compute instances delete newvm`
 
 
 ```
+
+5. AppEngine deployment
+
+```
+pip install -r requirements.txt -t lib
+gcloud app deploy --version 1
+
+edit base.html
+gcloud app deploy --no-promote --version 2
+
+```
