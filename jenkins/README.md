@@ -1,3 +1,9 @@
+Login into docker jenkins as root
+
+```
+docker exec -it -u root jenkins bash
+```
+
 Sample parameter groovy script
 
 ```
